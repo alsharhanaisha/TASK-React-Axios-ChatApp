@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import UpdateRoomModal from "./UpdateRoomModal";
+import roomsStore from "../stores/roomsStore";
 
 const ChatRoomItem = ({ room }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ const ChatRoomItem = ({ room }) => {
   const openModal = () => setIsOpen(true);
 
   const handleDelete = () => {
+    roomsStore.handleDeleteRoom(room.id);
     // call a function from app to delete a room (pass room.id as a parameter)
   };
   return (

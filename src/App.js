@@ -25,7 +25,11 @@ const App = () => {
               path="/room/:roomSlug"
               element={<ChatRoom rooms={rooms} />}
             />
-            <Route exact path="/" element={<ChatRoomsList rooms={rooms} />} />
+            <Route
+              exact
+              path="/"
+              element={<ChatRoomsList rooms={createRoom()} />}
+            />
           </Routes>
         </center>
       </div>
